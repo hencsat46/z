@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="/public/js/profile.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <div class="links">
+                <a href="http://localhost:3000/" class="main">Главная</a>
+                <a href="http://localhost:3000/clothes" class="clothes">Первая необходимость</a>
+                <a href="http://localhost:3000/shoes" class="boots">Аксессуары</a>
+                <a href="http://localhost:3000/about" class="about">О магазине</a>
+                <a href="http://localhost:3000/backlink" class="backlink">Обратная связь</a>
+            </div>
+        </nav>
+
+        <section class="profile-page">
+            <div class="person-info">
+                <div class="short-info">
+                    <div class="picture-image">
+                        <img src="/public/img/Великий.png" alt="" class="profile-image">
+                    </div>
+                    <div class="profile-username"><%= userData.username %></div>
+                    <section class="buttons">
+                        <button class="quit-button" onclick="quit()">Выйти</button>
+                    </section>
+                </div>
+                
+            <section class="send-wrapper">
+                <button class="send-button" onclick="sendData()">Сохранить</button>
+                <% if (userData.profile == 'putin') { %>
+                    <button class="edit-admin" onclick="editProducts()">Изменить товары</button>
+                    <button class="add-admin" onclick="addProducts()">Добавить товары</button>
+                <% } %>
+            </section>
+            <div class="cart">
+                <div class="cart-name">Корзина</div>
+                <div class="cart-products">
+
+                    <% for (let i = 0; i < data.length; i++) { %>
+                    <div class="item" id="<%= data[i]._id.toString() %>">
+                        <div class="item-image">
+                            <img src="/public/img/<%= data[i].category %>/<%= data[i].img %>" alt="">
+                        </div>
+                        <div class="item-name"><%= data[i].name %></div>
+                        <div class="item-text"><%= data[i].description %></div>
+                        <button class="buy-product" onclick="deleteFromCart(this)">Удалить</button>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

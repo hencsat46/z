@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <link rel="stylesheet" href="/public/css/login.css">
+    <script src="/public/js/login.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <div class="links">
+                <a href="http://localhost:3000/" class="main">Главная</a>
+                <a href="http://localhost:3000/clothes" class="clothes">Одежда</a>
+                <a href="http://localhost:3000/shoes" class="boots">Обувь</a>
+                <a href="http://localhost:3000/about" class="about">О магазине</a>
+                <a href="http://localhost:3000/backlink" class="backlink">Обратная связь</a>
+            </div>
+            <div class="profile-pic">
+                <a href="http://localhost:3000/login" class="login">Войти</a>
+            </div>
+        </nav>
+        <div class="login-section">
+            <div class="username">
+                <div class="username-header">Логин</div>
+                <input type="text" class="username-text">
+            </div>
+            <div class="password">
+                <div class="password-invalid">Неверный пароль</div>
+                <div class="password-header">Пароль</div>
+                <input type="password" class="password-text">
+            </div>
+            <button class="submit" onclick="send()">Войти</button>
+            <div class="registration">
+                Нет аккаунта? <a class="registration-link" onclick="moveToSignup()">Зарегистрироваться</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
