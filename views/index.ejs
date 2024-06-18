@@ -36,6 +36,11 @@
                             </div>
                             <div class="item-name"><%= firstArray[i][j].name %></div>
                             <div class="item-text"><%= firstArray[i][j].description %></div>
+                            <% if (firstArray[i][j].category == 'first') { %>
+                                <div class="item-category">Категория: Товары первой необходимости</div>
+                            <% } else { %>
+                                <div class="item-category">Категория: Аксессуары</div>
+                            <% } %>
                             <div class="cart-info">Добавлено <span class="product-count">0</span> шт.</div>
                             <button class="buy-product" onclick="addToCart(this)">Заказать</button>
                         </div>
